@@ -24,7 +24,9 @@ import {
 import TimerMixin from 'react-timer-mixin';
 import PropTypes from 'prop-types';
 
-var ARHitTestSample = React.createClass({
+var createReactClass = require('create-react-class');
+
+var ARHitTestSample = createReactClass({
   mixins: [TimerMixin],
 
   getInitialState: function() {
@@ -123,12 +125,12 @@ var ARHitTestSample = React.createClass({
   _onRotate(rotateState, rotationFactor, source) {
     if (rotateState == 3) {
       this.setState({
-        rotation : [this.state.rotation[0], this.state.rotation[1] - rotationFactor, this.state.rotation[2]]
+        rotation : [this.state.rotation[0], this.state.rotation[1] + rotationFactor, this.state.rotation[2]]
       })
       return;
     }
 
-    this.arNodeRef.setNativeProps({rotation:[this.state.rotation[0], this.state.rotation[1] - rotationFactor, this.state.rotation[2]]});
+    this.arNodeRef.setNativeProps({rotation:[this.state.rotation[0], this.state.rotation[1] + rotationFactor, this.state.rotation[2]]});
   },
 
   /*
