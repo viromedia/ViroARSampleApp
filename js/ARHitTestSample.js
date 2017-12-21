@@ -76,7 +76,6 @@ var ARHitTestSample = createReactClass({
           position={[0, 4, 0]}
           color="#ffffff"
           castsShadow={true}
-          influenceBitMask={bitMask}
           shadowNearZ={.1}
           shadowFarZ={6}
           shadowOpacity={.9}
@@ -85,8 +84,6 @@ var ARHitTestSample = createReactClass({
         <Viro3DObject
           position={[0, this.props.arSceneNavigator.viroAppProps.yOffset, 0]}
           source={this.props.arSceneNavigator.viroAppProps.objectSource}
-          lightReceivingBitMask={bitMask | 1}
-          shadowCastingBitMask={bitMask}
           type = "VRX" onLoadEnd={this._onLoadEnd} onLoadStart={this._onLoadStart}
           onRotate={this._onRotate}
           onPinch={this._onPinch} />
@@ -95,8 +92,6 @@ var ARHitTestSample = createReactClass({
             rotation={[-90, 0, 0]}
             position={[0, -.001, 0]}
             width={2.5} height={2.5}
-            lightReceivingBitMask={bitMask | 1}
-            materials={"shadowCatcher"}
             arShadowReceiver={true}
             ignoreEventHandling={true} />
 
@@ -237,13 +232,6 @@ var ARHitTestSample = createReactClass({
     var distance = Math.sqrt(((vectorTwo[0] - vectorOne[0]) * (vectorTwo[0] - vectorOne[0])) + ((vectorTwo[1] - vectorOne[1]) * (vectorTwo[1] - vectorOne[1])) + ((vectorTwo[2] - vectorOne[2]) * (vectorTwo[2] - vectorOne[2])));
     return distance;
   }
-});
-
-// Create a material for our shadows.
-ViroMaterials.createMaterials({
-  shadowCatcher: {
-      writesToDepthBuffer: false,
-  },
 });
 
 module.exports = ARHitTestSample;

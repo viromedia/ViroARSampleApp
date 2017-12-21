@@ -7,7 +7,7 @@ import {
   StyleSheet,
   TouchableHighlight,
   Image,
-  AlertIOS,
+  Alert,
 } from 'react-native';
 
 import {
@@ -44,7 +44,7 @@ export default class ViroSample extends Component {
   render() {
     return (
       <View style={localStyles.outer} >
-        <ViroARSceneNavigator style={localStyles.arView} apiKey="API_KEY_HERE"
+        <ViroARSceneNavigator style={localStyles.arView} apiKey="YOUR API KEY"
           initialScene={{scene:InitialARScene, passProps:{displayObject:this.state.displayObject}}}  viroAppProps={this.state.viroAppProps}
         />
 
@@ -100,7 +100,7 @@ export default class ViroSample extends Component {
   }
 
   _onDisplayDialog() {
-    AlertIOS.alert(
+    Alert.alert(
     'Choose an object',
     'Select an object to place in the world!',
     [
