@@ -1,6 +1,6 @@
 # ViroARSampleApp
 
-A full sample AR app in iOS that demonstrates placing, rotating and dragging objects in AR. 
+A full React Viro sample AR app for iOS and Android that demonstrates placing, rotating and dragging objects in AR. 
 
 To run:
 1. Make sure you have node and npm installed. Please see our [Quick Start](http://docs.viromedia.com/docs/quick-start) guide for more info. 
